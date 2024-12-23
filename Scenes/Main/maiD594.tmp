@@ -1,0 +1,94 @@
+[gd_scene load_steps=4 format=3 uid="uid://byx8juuxp6cbw"]
+
+[ext_resource type="Script" path="res://Scenes/Main/MainLogic.gd" id="1_2h3al"]
+[ext_resource type="PackedScene" uid="uid://dh3l6pq78qylp" path="res://Scenes/Dice Scene/die.tscn" id="2_kwdxb"]
+[ext_resource type="Script" path="res://Scenes/Main/PickedDice.gd" id="3_2dbgi"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_2h3al")
+
+[node name="Die" parent="." instance=ExtResource("2_kwdxb")]
+position = Vector2(113, 123)
+
+[node name="Die2" parent="." instance=ExtResource("2_kwdxb")]
+position = Vector2(296, 123)
+
+[node name="Die3" parent="." instance=ExtResource("2_kwdxb")]
+position = Vector2(481, 123)
+
+[node name="Die4" parent="." instance=ExtResource("2_kwdxb")]
+position = Vector2(848, 123)
+
+[node name="Die5" parent="." instance=ExtResource("2_kwdxb")]
+position = Vector2(1022, 123)
+
+[node name="Die6" parent="." instance=ExtResource("2_kwdxb")]
+position = Vector2(662, 123)
+
+[node name="Picked Dice Positions" type="Node" parent="."]
+script = ExtResource("3_2dbgi")
+
+[node name="Location1" type="Node2D" parent="Picked Dice Positions"]
+position = Vector2(70, 532)
+
+[node name="Location2" type="Node2D" parent="Picked Dice Positions"]
+position = Vector2(220, 532)
+
+[node name="Location3" type="Node2D" parent="Picked Dice Positions"]
+position = Vector2(370, 532)
+
+[node name="Location4" type="Node2D" parent="Picked Dice Positions"]
+position = Vector2(520, 532)
+
+[node name="Location5" type="Node2D" parent="Picked Dice Positions"]
+position = Vector2(670, 532)
+
+[node name="Location6" type="Node2D" parent="Picked Dice Positions"]
+position = Vector2(820, 532)
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Pick" type="Button" parent="Control"]
+visible = false
+layout_mode = 0
+offset_left = 259.0
+offset_top = 275.0
+offset_right = 882.0
+offset_bottom = 353.0
+theme_override_font_sizes/font_size = 50
+text = "Pick Dice"
+
+[node name="EqualSign" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 922.0
+offset_top = 503.0
+offset_right = 922.0
+offset_bottom = 526.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "="
+
+[node name="Amount" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 1022.0
+offset_top = 500.0
+offset_right = 1136.0
+offset_bottom = 569.0
+theme_override_font_sizes/font_size = 50
+
+[connection signal="dieSelected" from="Die" to="." method="_on_die_die_selected"]
+[connection signal="pressed" from="Control/Pick" to="." method="_on_pick_pressed"]
+[connection signal="pressed" from="Control/Pick" to="." method="_on_select_pressed"]
+[connection signal="pressed" from="Control/Pick" to="Picked Dice Positions" method="_on_pick_pressed"]
