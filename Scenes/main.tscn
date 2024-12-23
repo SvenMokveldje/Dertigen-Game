@@ -7,19 +7,19 @@
 script = ExtResource("1_7p62h")
 
 [node name="Die" parent="." instance=ExtResource("1_ikj4i")]
-position = Vector2(113, 316)
+position = Vector2(113, 123)
 
 [node name="Die2" parent="." instance=ExtResource("1_ikj4i")]
-position = Vector2(296, 316)
+position = Vector2(296, 123)
 
 [node name="Die3" parent="." instance=ExtResource("1_ikj4i")]
-position = Vector2(483, 316)
+position = Vector2(481, 123)
 
 [node name="Die4" parent="." instance=ExtResource("1_ikj4i")]
-position = Vector2(670, 316)
+position = Vector2(848, 123)
 
 [node name="Die5" parent="." instance=ExtResource("1_ikj4i")]
-position = Vector2(854, 316)
+position = Vector2(1022, 123)
 
 [node name="Die6" parent="." instance=ExtResource("1_ikj4i")]
-position = Vector2(1027, 316)
+position = Vector2(662, 123)

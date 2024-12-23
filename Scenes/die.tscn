@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://DieLogic.gd" id="1_2fgl7"]
 [ext_resource type="Script" path="res://Scenes/DieUIControl.gd" id="2_ofqs3"]
 
-[node name="Die" type="Node2D"]
+[node name="Die" type="Node2D" groups=["Dice"]]
 script = ExtResource("1_2fgl7")
 
 [node name="Control" type="Control" parent="."]

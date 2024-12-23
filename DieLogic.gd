@@ -9,13 +9,16 @@ var selected = false
 func _ready() -> void:
 	dieText.text = str(currentNum)
 
+func throwDie() -> void:
+	currentNum = randi() % 6 + 1
+	dieText.text = str(currentNum)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("click"):
-		currentNum = randi() % 6 + 1
-		dieText.text = str(currentNum)
-	
+	pass
+		
+		
+# Change die color on selection
 func _on_control_die_selected(value: Variant) -> void:
 	selected = value 
 	
